@@ -1,0 +1,1 @@
+`Shipping & handling:\t\t$${(2 * 499) / 100}`;
