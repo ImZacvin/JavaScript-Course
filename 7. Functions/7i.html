@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+
+    <body>
+       <script>
+          const available = ['km', 'miles', 'ft'];
+          
+          function convertLength(length, from, to) {
+            if (!available.includes(from)) {
+              return console.log(`Invalid unit: ${from}`);
+            }
+            if (!available.includes(to)) {
+              return console.log(`Invalid unit: ${to}`);
+            }
+
+            if (from === to) {
+              return console.log(`${length} ${to}`);
+            }
+
+            if (from === 'km') {
+              if(to === 'ft') {
+                const converted = length * 3281;
+                return console.log(`${converted} ${to}`);
+              } else if(to === 'miles') {
+                const converted = length / 1.6;
+                return console.log(`${converted} ${to}`);
+              }
+            } else if (from === 'miles') {
+              if(to === 'ft') {
+                const converted = length * 5280;
+                return console.log(`${converted} ${to}`);
+              } else if(to === 'km') {
+                const converted = length * 1.6;
+                return console.log(`${converted} ${to}`);
+              }
+            } else if (from === 'ft') {
+              if(to === 'miles') {
+                const converted = length / 5280;
+                return console.log(`${converted} ${to}`);
+              } else if(to === 'km') {
+                const converted = length / 3281;
+                return console.log(`${converted} ${to}`);
+              }
+            }
+          }
+
+          convertLength(5, 'lbs', 'lbs');
+          convertLength(5, 'miles', 'ftss');
+          convertLength(5, 'ft', 'ft');
+          convertLength(5, 'km', 'foot');
+          convertLength(5, 'miles', 'ft');
+          convertLength(5, 'km', 'ft');
+       </script>
+    </body>
+</html>

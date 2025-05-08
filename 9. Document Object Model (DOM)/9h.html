@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>DOM Projects</title>
+  </head>
+
+  <body>
+
+    <p>Amazon Shipping Calculator</p>
+    <input placeholder="Cost of order" class="js-cost-input"
+      onkeyup="
+        handleKeyUp(event);
+      ">
+
+    <p class="js-text"></p>
+
+    <script>
+      let text = '';
+      function handleKeyUp(event) {
+        if(event.key === 'Backspace') {
+          text = text.slice(0, -1);
+        } else {
+          text += event.key;
+ 
+        }
+
+        document.querySelector('.js-text')
+          .innerHTML = text;
+      }
+    </script>
+  </body>
+</html>

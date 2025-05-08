@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+
+  <body>
+    <script>
+      function findIndex(array, word) {
+        let check = false;
+        const index = [];
+        for(let i = 0; i < array.length; i++) {
+          if (array[i] === word) {
+            check = true;
+            index.push(i);
+          }
+        }
+
+        if (check) {
+          return index[0];
+        } else {
+          return -1;
+        }
+      }
+
+      function unique(array) {
+        const uniqueArray = [];
+        for(let i = 0; i < array.length; i++) {
+          if (findIndex(uniqueArray, array[i]) === -1) {
+            uniqueArray.push(array[i]);
+          }
+        }
+        return uniqueArray;
+      }
+
+      console.log(unique(['green', 'red', 'blue', 'red']));
+      console.log(unique(['red', 'green', 'green', 'red']));
+    </script>
+  </body>
+</html>

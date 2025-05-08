@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+
+    <body>
+       <script>
+          function convertLength(length, from, to) {
+            if (from === to) {
+              return console.log(`${length} ${to}`);
+            }
+
+            if (to === 'miles') {
+              const converted = length / 1.6
+              return console.log(`${converted} ${to}`);
+            } else if (to === 'km') {
+              const converted = length * 1.6
+              return console.log(`${converted} ${to}`);
+            }
+          }
+
+          convertLength(50, 'miles', 'km');
+          convertLength(32, 'km', 'miles');
+          convertLength(50, 'km', 'km');
+       </script>
+    </body>
+</html>

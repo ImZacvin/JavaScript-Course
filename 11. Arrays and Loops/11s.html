@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+
+  <body>
+    <script>
+      function removeEgg(foods) {
+        let removed = foods;
+        let max = 2;
+        let temp = 0; 
+        for(let i = 0; i < foods.length; i++) {
+          if (foods[i] === 'egg' ) {
+            foods.splice(i, 1);
+            temp++;
+          }
+        }
+        
+        return removed;
+      }
+
+      console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+    </script>
+  </body>
+</html>

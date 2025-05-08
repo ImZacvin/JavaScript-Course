@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+
+  <body>
+    <script>
+      function countWords(words) {
+        let objectCount = {};
+
+        for (let i = 0; i < words.length; i++) {
+          let word = words[i];
+          if(objectCount[word]) {
+            objectCount[word]++; 
+          } else {
+            objectCount[word] = 1;
+          }
+        }   
+
+        console.log(objectCount)
+      }
+
+      countWords(["hello", "world", "hello", "hello", "pepepe"]);
+    </script>
+  </body>
+</html>

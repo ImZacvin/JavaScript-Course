@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+
+  <body>
+    <script>
+      const array1 = ['hello', 'world', 'search', 'good', 'search'];
+      const array2 = ['not', 'found'];
+      
+      let check = false;
+      const index = [];
+      for(let i = 0; i < array1.length; i++) {
+        if (array1[i] === 'search') {
+          check = true;
+          index.push(i);
+        }
+      }
+
+      if (check) {
+        console.log(`Found at : ${index}`);
+      } else {
+        console.log(-1);
+      }
+
+
+    </script>
+  </body>
+</html>

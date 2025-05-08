@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+
+  <body> 
+    <button onclick="
+      clickedButton('heads');
+      ">heads</button>
+    <button onclick="
+      clickedButton('tails');
+    ">tails</button>
+    <p class="js-text"></p>
+    <script>
+      function clickedButton(button) {
+        const textElement = document.querySelector('.js-text');
+        
+        textElement.innerHTML = `You chose: ${button}`;
+      }
+    </script>
+  </body>
+</html>

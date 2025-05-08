@@ -1,0 +1,34 @@
+body {
+  font-family: Arial;
+  background-color: black;
+}
+
+.js-text {
+  font-size: 40px;
+  margin: 0;
+  color: white;
+}
+
+.gray-button {
+  background-color: rgb(51, 51, 51);
+  color: white;
+}
+
+.orange-button {
+  background-color: rgb(254, 160, 10);
+  color: white;
+}
+
+button {
+  height: 60px;
+  width: 60px;
+  border-radius: 60px;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.clear-button {
+  font-size: 17px;
+}

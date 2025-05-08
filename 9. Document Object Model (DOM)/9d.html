@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+
+  <body> 
+    <input class="js-input">
+    <button onclick="
+      handleChange();
+    ">Submit</button>
+    <p class="js-text"></p>
+    <script>
+
+      function handleChange() {
+        const textElement = document.querySelector('.js-input');
+        let name = textElement.value;
+
+        document.querySelector('.js-text').innerHTML = `Your name is ${name}`;
+      }
+
+    </script>
+  </body>
+</html>
