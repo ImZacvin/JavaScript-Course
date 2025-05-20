@@ -17,16 +17,30 @@ if(!score) {
 */
 
 function resetScore() {
-  score.wins = 0;
-  score.losses = 0;
-  score.ties = 0;
+  const confirmationText = document.querySelector('.js-confirmation-text');
 
-  localStorage.removeItem('score');
+  confirmationText.innerHTML = `
+    Are you sure you want to reset the score? 
+    <button class="confirmation-button js-confirmation-yes-button">Yes</button>
+    <button class="confirmation-button js-confirmation-no-button">No</button>
+  `;
 
-  updateScoreElement();
-  document.querySelector('.js-result').innerHTML = '';
-  document.querySelector('.js-moves').innerHTML = ''; 
+  document.querySelector('.js-confirmation-yes-button').addEventListener('click', () => {
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
 
+    localStorage.removeItem('score');
+
+    document.querySelector('.js-confirmation-text').innerHTML = '';
+    updateScoreElement();
+    document.querySelector('.js-result').innerHTML = '';
+    document.querySelector('.js-moves').innerHTML = ''; 
+  });
+
+  document.querySelector('.js-confirmation-no-button').addEventListener('click', () => {
+    document.querySelector('.js-confirmation-text').innerHTML = '';
+  });
 };
 
 document.querySelector('.js-auto-button').addEventListener('click', () => {
@@ -34,7 +48,7 @@ document.querySelector('.js-auto-button').addEventListener('click', () => {
 });
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Backspace') resetScore();
-})
+});
 
 function updateScoreElement() {
   document.querySelector('.js-score').innerHTML = `Wins = ${score.wins}, Lost = ${score.losses}, Tie = ${score.ties}`;
