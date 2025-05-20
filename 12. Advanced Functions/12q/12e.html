@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+
+  <body>
+    <button class="button js-button">Add to cart</button>
+
+    <p class="info"></p>
+    <script>
+      document.querySelector('.js-button').addEventListener('click', () => {
+        document.querySelector('.info').innerHTML = 'Added';
+        setTimeout(() => {
+          document.querySelector('.info').innerHTML = '';
+        }, 2000)
+      })
+    </script>
+  </body>
+</html>

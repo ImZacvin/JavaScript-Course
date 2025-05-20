@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+
+  <body>
+    <button class="js-button">Add to cart</button>
+
+    <p class="info"></p>
+    <script>
+      let timeoutID;
+      let newClick;
+
+      function running() {
+        document.querySelector('.info').innerHTML = 'Added';
+
+        clearTimeout(timeoutID);
+
+        timeoutID = setTimeout(() => {
+          document.querySelector('.info').innerHTML = '';
+        }, 2000);
+      }
+
+      document.querySelector('.js-button').addEventListener('click', () => {
+        running();
+      })
+    </script>
+  </body>
+</html>
