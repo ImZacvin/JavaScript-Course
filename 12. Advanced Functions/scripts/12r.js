@@ -29,7 +29,7 @@ function resetScore() {
     score.wins = 0;
     score.losses = 0;
     score.ties = 0;
-
+    
     localStorage.removeItem('score');
 
     document.querySelector('.js-confirmation-text').innerHTML = '';
