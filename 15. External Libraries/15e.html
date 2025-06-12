@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script>
+      const today = dayjs();
+
+      function isWeekend(date) {
+        if(date.format('dddd') === 'Saturday' || date.format('dddd') === 'Sunday') {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      console.log(isWeekend(today.add(10, 'day')));
+    </script>
+  </body>
+</html>

@@ -125,6 +125,17 @@ document.querySelectorAll('.js-update-link').forEach((link) => {
     const productId = link.dataset.productId;
     document.querySelector(`.js-cart-item-container-${productId}`).classList.add('is-editing-quantity');
 
+    document.querySelectorAll('.js-save-link').forEach((link) => {
+      link.addEventListener('click', () => {
+        const productId = link.dataset.productId;
+
+        const container = document.querySelector(
+          `.js-cart-item-container-${productId}`
+        );
+        container.classList.remove('is-editing-quantity');
+      });
+    });
+
     document.querySelector(`.js-quantity-input-${productId}`).addEventListener('keydown', (event) => {
       if(event.code === 'Enter') {
         const quantityInput = Number(document.querySelector(`.js-quantity-input-${productId}`).value);
