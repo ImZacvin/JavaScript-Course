@@ -74,9 +74,6 @@ const tshirt = new Clothing({
   sizeChartLink: "images/clothing-size-chart.png"
 });
 
-console.log(tshirt);
-console.log(tshirt.getPrice());
-
 /*
 const date = new Date();
 console.log(date);
@@ -110,6 +107,30 @@ object3.method();
 
 export let products = [];
 
+export function loadProductsFetch() {
+  const promise = fetch('https://supersimplebackend.dev/products').then((respond) => {
+    return respond.json();
+  }).then((productsData) => {
+    products = productsData.map((productDetails) => {
+      if (productDetails.type === 'clothing') {
+        return new Clothing(productDetails);
+      }
+
+      return new Product(productDetails);
+    })
+
+    console.log('load products');
+  })
+
+  return promise;
+}
+
+/*
+loadProductsFetch().then(() => {
+  console.log('Next Step');
+});
+*/
+
 export function loadProducts(fun) {
   const xhr = new XMLHttpRequest()
 
@@ -123,7 +144,7 @@ export function loadProducts(fun) {
     });
 
     console.log('load products');
-    fun;
+    fun();
   });
 
   xhr.open('GET', 'https://supersimplebackend.dev/products');
@@ -131,7 +152,6 @@ export function loadProducts(fun) {
 }
 
 loadProducts();
-
 /*
 export const products = [
   {
